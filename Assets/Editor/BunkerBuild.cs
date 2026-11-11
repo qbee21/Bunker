@@ -35,6 +35,7 @@ public class BunkerBuild
         PlayerSettings.iOS.applicationDisplayName = "Bunker Evolution";
         PlayerSettings.iOS.requiresFullScreen = true;
         PlayerSettings.statusBarHidden = true;
+        PlayerSettings.iOS.appleDeveloperTeamID = "CFG7FY3R8S";
         PlayerSettings.iOS.appleEnableAutomaticSigning = false;
         Texture2D iOSIcon = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Branding/BunkerEvolutionAppIcon.jpg");
         if (iOSIcon != null) PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS, new[] { iOSIcon });
