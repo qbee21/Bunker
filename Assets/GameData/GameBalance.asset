@@ -1,0 +1,539 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3731a64a56da592091f48a877365fe1a, type: 3}
+  m_Name: GameBalance
+  m_EditorClassIdentifier: 
+  startingCoins: 0
+  wavesPerEra: 5
+  campaignWaves: 50
+  maxAlliedUnits: 6
+  startingFood: 0
+  maxFood: 60
+  secondsPerFood: 1
+  foodUpgradeMaxLevel: 10
+  foodCapacityPerLevel: 4
+  foodCapacityLimit: 60
+  startingFoodPerLevel: 2
+  startingFoodLimit: 0
+  foodIntervalReduction: 0.03
+  foodMinimumInterval: 0.7
+  foodUpgradePrice: 100
+  foodUpgradePriceGrowth: 1.2
+  foodUpgradePriceMin: 25
+  foodUpgradePriceMax: 300
+  playerBunkerHealth: 40
+  playerBunkerPower: 1
+  playerWeaponDamage: 1
+  playerWeaponInterval: 1
+  playerBunkerRangeOverride: -1
+  localDifficulty: 1
+  enemyHealthMultiplier: 1
+  enemyDamageMultiplier: 1
+  enemyCountMultiplier: 1
+  enemySpawnIntervalMultiplier: 1
+  maxConcurrentEnemies: 8
+  waveOverrides:
+  - firstWave: 1
+    lastWave: 1
+    regularEnemyCount: 6
+    health: 1.1
+    damage: 0.9
+    count: 1
+    spawnInterval: 4.5
+    coins: 33
+    bunkerHealth: 60
+  - firstWave: 2
+    lastWave: 2
+    regularEnemyCount: 8
+    health: 1.28
+    damage: 0.95
+    count: 1
+    spawnInterval: 4.8
+    coins: 36
+    bunkerHealth: 80
+  - firstWave: 3
+    lastWave: 3
+    regularEnemyCount: 10
+    health: 1.46
+    damage: 1
+    count: 1
+    spawnInterval: 5.1
+    coins: 39
+    bunkerHealth: 100
+  - firstWave: 4
+    lastWave: 4
+    regularEnemyCount: 12
+    health: 1.64
+    damage: 1.05
+    count: 1
+    spawnInterval: 5.4
+    coins: 42
+    bunkerHealth: 120
+  - firstWave: 5
+    lastWave: 5
+    regularEnemyCount: 14
+    health: 1.82
+    damage: 1.1
+    count: 1
+    spawnInterval: 5.7
+    coins: 45
+    bunkerHealth: 140
+  - firstWave: 6
+    lastWave: 6
+    regularEnemyCount: 11
+    health: 1.95
+    damage: 1.05
+    count: 1
+    spawnInterval: 6.45
+    coins: 48
+    bunkerHealth: 170
+  - firstWave: 7
+    lastWave: 7
+    regularEnemyCount: 13
+    health: 2.13
+    damage: 1.1
+    count: 1
+    spawnInterval: 6.35
+    coins: 51
+    bunkerHealth: 190
+  - firstWave: 8
+    lastWave: 8
+    regularEnemyCount: 15
+    health: 2.31
+    damage: 1.15
+    count: 1
+    spawnInterval: 6.25
+    coins: 54
+    bunkerHealth: 210
+  - firstWave: 9
+    lastWave: 9
+    regularEnemyCount: 17
+    health: 2.49
+    damage: 1.2
+    count: 1
+    spawnInterval: 6.15
+    coins: 57
+    bunkerHealth: 230
+  - firstWave: 10
+    lastWave: 10
+    regularEnemyCount: 19
+    health: 2.67
+    damage: 1.25
+    count: 1
+    spawnInterval: 6.05
+    coins: 60
+    bunkerHealth: 250
+  - firstWave: 11
+    lastWave: 11
+    regularEnemyCount: 12
+    health: 2.8
+    damage: 1.2
+    count: 1
+    spawnInterval: 6.7
+    coins: 63
+    bunkerHealth: 280
+  - firstWave: 12
+    lastWave: 12
+    regularEnemyCount: 14
+    health: 2.98
+    damage: 1.25
+    count: 1
+    spawnInterval: 6.6
+    coins: 66
+    bunkerHealth: 300
+  - firstWave: 13
+    lastWave: 13
+    regularEnemyCount: 16
+    health: 3.16
+    damage: 1.3
+    count: 1
+    spawnInterval: 6.5
+    coins: 69
+    bunkerHealth: 320
+  - firstWave: 14
+    lastWave: 14
+    regularEnemyCount: 18
+    health: 3.34
+    damage: 1.35
+    count: 1
+    spawnInterval: 6.4
+    coins: 72
+    bunkerHealth: 340
+  - firstWave: 15
+    lastWave: 15
+    regularEnemyCount: 20
+    health: 3.52
+    damage: 1.4
+    count: 1
+    spawnInterval: 6.3
+    coins: 75
+    bunkerHealth: 360
+  - firstWave: 16
+    lastWave: 16
+    regularEnemyCount: 13
+    health: 3.65
+    damage: 1.35
+    count: 1
+    spawnInterval: 6.95
+    coins: 78
+    bunkerHealth: 390
+  - firstWave: 17
+    lastWave: 17
+    regularEnemyCount: 15
+    health: 3.83
+    damage: 1.4
+    count: 1
+    spawnInterval: 6.85
+    coins: 81
+    bunkerHealth: 410
+  - firstWave: 18
+    lastWave: 18
+    regularEnemyCount: 17
+    health: 4.01
+    damage: 1.45
+    count: 1
+    spawnInterval: 6.75
+    coins: 84
+    bunkerHealth: 430
+  - firstWave: 19
+    lastWave: 19
+    regularEnemyCount: 19
+    health: 4.19
+    damage: 1.5
+    count: 1
+    spawnInterval: 6.65
+    coins: 87
+    bunkerHealth: 450
+  - firstWave: 20
+    lastWave: 20
+    regularEnemyCount: 21
+    health: 4.37
+    damage: 1.55
+    count: 1
+    spawnInterval: 6.55
+    coins: 90
+    bunkerHealth: 470
+  - firstWave: 21
+    lastWave: 21
+    regularEnemyCount: 14
+    health: 4.5
+    damage: 1.5
+    count: 1
+    spawnInterval: 7.2
+    coins: 93
+    bunkerHealth: 500
+  - firstWave: 22
+    lastWave: 22
+    regularEnemyCount: 16
+    health: 4.68
+    damage: 1.55
+    count: 1
+    spawnInterval: 7.1
+    coins: 96
+    bunkerHealth: 520
+  - firstWave: 23
+    lastWave: 23
+    regularEnemyCount: 18
+    health: 4.86
+    damage: 1.6
+    count: 1
+    spawnInterval: 7
+    coins: 99
+    bunkerHealth: 540
+  - firstWave: 24
+    lastWave: 24
+    regularEnemyCount: 20
+    health: 5.04
+    damage: 1.65
+    count: 1
+    spawnInterval: 6.9
+    coins: 102
+    bunkerHealth: 560
+  - firstWave: 25
+    lastWave: 25
+    regularEnemyCount: 22
+    health: 5.22
+    damage: 1.7
+    count: 1
+    spawnInterval: 6.8
+    coins: 105
+    bunkerHealth: 580
+  - firstWave: 26
+    lastWave: 26
+    regularEnemyCount: 15
+    health: 5.35
+    damage: 1.65
+    count: 1
+    spawnInterval: 7.45
+    coins: 108
+    bunkerHealth: 610
+  - firstWave: 27
+    lastWave: 27
+    regularEnemyCount: 17
+    health: 5.53
+    damage: 1.7
+    count: 1
+    spawnInterval: 7.35
+    coins: 111
+    bunkerHealth: 630
+  - firstWave: 28
+    lastWave: 28
+    regularEnemyCount: 19
+    health: 5.71
+    damage: 1.75
+    count: 1
+    spawnInterval: 7.25
+    coins: 114
+    bunkerHealth: 650
+  - firstWave: 29
+    lastWave: 29
+    regularEnemyCount: 21
+    health: 5.89
+    damage: 1.8
+    count: 1
+    spawnInterval: 7.15
+    coins: 117
+    bunkerHealth: 670
+  - firstWave: 30
+    lastWave: 30
+    regularEnemyCount: 23
+    health: 6.07
+    damage: 1.85
+    count: 1
+    spawnInterval: 7.05
+    coins: 120
+    bunkerHealth: 690
+  - firstWave: 31
+    lastWave: 31
+    regularEnemyCount: 16
+    health: 6.2
+    damage: 1.8
+    count: 1
+    spawnInterval: 7.7
+    coins: 123
+    bunkerHealth: 720
+  - firstWave: 32
+    lastWave: 32
+    regularEnemyCount: 18
+    health: 6.38
+    damage: 1.85
+    count: 1
+    spawnInterval: 7.6
+    coins: 126
+    bunkerHealth: 740
+  - firstWave: 33
+    lastWave: 33
+    regularEnemyCount: 20
+    health: 6.56
+    damage: 1.9
+    count: 1
+    spawnInterval: 7.5
+    coins: 129
+    bunkerHealth: 760
+  - firstWave: 34
+    lastWave: 34
+    regularEnemyCount: 22
+    health: 6.74
+    damage: 1.95
+    count: 1
+    spawnInterval: 7.4
+    coins: 132
+    bunkerHealth: 780
+  - firstWave: 35
+    lastWave: 35
+    regularEnemyCount: 24
+    health: 6.92
+    damage: 2
+    count: 1
+    spawnInterval: 7.3
+    coins: 135
+    bunkerHealth: 800
+  - firstWave: 36
+    lastWave: 36
+    regularEnemyCount: 16
+    health: 7.05
+    damage: 1.95
+    count: 1
+    spawnInterval: 7.95
+    coins: 138
+    bunkerHealth: 830
+  - firstWave: 37
+    lastWave: 37
+    regularEnemyCount: 18
+    health: 7.23
+    damage: 2
+    count: 1
+    spawnInterval: 7.85
+    coins: 141
+    bunkerHealth: 850
+  - firstWave: 38
+    lastWave: 38
+    regularEnemyCount: 20
+    health: 7.41
+    damage: 2.05
+    count: 1
+    spawnInterval: 7.75
+    coins: 144
+    bunkerHealth: 870
+  - firstWave: 39
+    lastWave: 39
+    regularEnemyCount: 22
+    health: 7.59
+    damage: 2.1
+    count: 1
+    spawnInterval: 7.65
+    coins: 147
+    bunkerHealth: 890
+  - firstWave: 40
+    lastWave: 40
+    regularEnemyCount: 24
+    health: 7.77
+    damage: 2.15
+    count: 1
+    spawnInterval: 7.55
+    coins: 150
+    bunkerHealth: 910
+  - firstWave: 41
+    lastWave: 41
+    regularEnemyCount: 16
+    health: 6.32
+    damage: 2.1
+    count: 1
+    spawnInterval: 10.2
+    coins: 153
+    bunkerHealth: 940
+  - firstWave: 42
+    lastWave: 42
+    regularEnemyCount: 18
+    health: 6.46
+    damage: 2.15
+    count: 1
+    spawnInterval: 10.1
+    coins: 156
+    bunkerHealth: 960
+  - firstWave: 43
+    lastWave: 43
+    regularEnemyCount: 20
+    health: 6.61
+    damage: 2.2
+    count: 1
+    spawnInterval: 10
+    coins: 159
+    bunkerHealth: 980
+  - firstWave: 44
+    lastWave: 44
+    regularEnemyCount: 22
+    health: 6.75
+    damage: 2.25
+    count: 1
+    spawnInterval: 9.9
+    coins: 162
+    bunkerHealth: 1000
+  - firstWave: 45
+    lastWave: 45
+    regularEnemyCount: 24
+    health: 6.9
+    damage: 2.3
+    count: 1
+    spawnInterval: 9.8
+    coins: 165
+    bunkerHealth: 1020
+  - firstWave: 46
+    lastWave: 46
+    regularEnemyCount: 16
+    health: 7
+    damage: 2.25
+    count: 1
+    spawnInterval: 10.45
+    coins: 168
+    bunkerHealth: 1050
+  - firstWave: 47
+    lastWave: 47
+    regularEnemyCount: 18
+    health: 7.14
+    damage: 2.3
+    count: 1
+    spawnInterval: 10.35
+    coins: 171
+    bunkerHealth: 1070
+  - firstWave: 48
+    lastWave: 48
+    regularEnemyCount: 20
+    health: 7.29
+    damage: 2.35
+    count: 1
+    spawnInterval: 10.25
+    coins: 174
+    bunkerHealth: 1090
+  - firstWave: 49
+    lastWave: 49
+    regularEnemyCount: 22
+    health: 7.43
+    damage: 2.4
+    count: 1
+    spawnInterval: 10.15
+    coins: 177
+    bunkerHealth: 1110
+  - firstWave: 50
+    lastWave: 50
+    regularEnemyCount: 24
+    health: 7.58
+    damage: 2.45
+    count: 1
+    spawnInterval: 10.05
+    coins: 180
+    bunkerHealth: 1130
+  countFromLocalEraWave: 1
+  firstWaveEnemies: 6
+  extraEnemies: 2
+  extraEnemiesPerEra: 3
+  maxEnemies: 28
+  spawnInterval: 1
+  minimumSpawnInterval: 1
+  spawnIntervalReduction: 0
+  destroyedBunkerSpawnInterval: 0.25
+  growthFromLocalEraWave: 1
+  generatedHealthBase: 1
+  generatedDamageBase: 1
+  enemyHealthGrowth: 0
+  enemyDamageGrowth: 0
+  enemyHealthPerEra: 0
+  enemyDamagePerEra: 0
+  generatedHealthCap: 2.5
+  generatedDamageCap: 2
+  enemyRoleWeights: {x: 5, y: 3, z: 2}
+  bossEvery: 5
+  bossEraOffset: 1
+  bossHealth: 3
+  bossDamage: 1.4
+  enemyBunkerEvery: 1
+  enemyBunkerHealthBase: 1
+  enemyBunkerHealthPerWave: 0
+  enemyBunkerHealthMultiplier: 1
+  enemyBunkerDamage: 1
+  enemyBunkerDamagePerWave: 0
+  enemyBunkerInterval: 2
+  enemyBunkerRangeOverride: 5
+  waveCoins: 1
+  waveCoinsPerWave: 0
+  waveRewardMultiplier: 1
+  dailyCoins: 100
+  upgradePrice: 30
+  upgradePriceGrowth: 1.12
+  upgradePower: 0.12
+  coinChance: 0.8
+  coinRewardMultiplier: 1
+  bossCoinMultiplier: 6
+  defeatCoins: 5
+  defeatCoinsPerEra: 2
+  defeatMinimumKills: 3
+  defeatMinimumSeconds: 20

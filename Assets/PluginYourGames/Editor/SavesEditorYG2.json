@@ -1,0 +1,28 @@
+{
+  "stringKeys": [
+    "BunkerSave1"
+  ],
+  "stringValues": [
+    "{\"version\":1,\"completedWave\":11,\"coins\":29,\"bunkerHealth\":1,\"bunkerPower\":2,\"foodUpgrade\":10,\"unitHealth\":[1,1,0],\"unitPower\":[1,1,0],\"dailyTime\":639287149878869101,\"preparedWave\":12,\"prepReward\":false,\"extensions\":20,\"extensionRotation\":0,\"slotRulesVersion\":1,\"cells\":[false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,false,true,true,true,true,false,false,true,true,false,false,false,false,true,true,false,false,false],\"items\":[{\"kind\":11,\"x\":1,\"y\":3,\"rotation\":0},{\"kind\":10,\"x\":3,\"y\":2,\"rotation\":0},{\"kind\":11,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":11,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0}],\"revision\":639289479580335627}"
+  ],
+  "floatKeys": [],
+  "floatValues": [],
+  "intKeys": [
+    "start",
+    "BunkerMuted"
+  ],
+  "intValues": [
+    1,
+    1
+  ],
+  "intExample": 5,
+  "strExample": "Hello!",
+  "boolExample": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "idSave": 537,
+  "bunkerProgress": "{\"version\":1,\"completedWave\":11,\"coins\":29,\"bunkerHealth\":1,\"bunkerPower\":2,\"foodUpgrade\":10,\"unitHealth\":[1,1,0],\"unitPower\":[1,1,0],\"dailyTime\":639287149878869101,\"preparedWave\":12,\"prepReward\":false,\"extensions\":20,\"extensionRotation\":0,\"slotRulesVersion\":1,\"cells\":[false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,false,true,true,true,true,false,false,true,true,false,false,false,false,true,true,false,false,false],\"items\":[{\"kind\":11,\"x\":1,\"y\":3,\"rotation\":0},{\"kind\":10,\"x\":3,\"y\":2,\"rotation\":0},{\"kind\":11,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":11,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0},{\"kind\":-1,\"x\":-1,\"y\":-1,\"rotation\":0}],\"revision\":639289479580335627}"
+}

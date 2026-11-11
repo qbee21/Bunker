@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject:
+    fileID: 0
+  m_PrefabInstance:
+    fileID: 0
+  m_PrefabAsset:
+    fileID: 0
+  m_GameObject:
+    fileID: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script:
+    fileID: 11500000
+    guid: c49032752b8658df8e9dd670f9c11a7b
+    type: 3
+  m_Name: EraExpansionCatalog
+  m_EditorClassIdentifier: ''
+  firstAdditionalEra: 7
+  additionalEras:
+  - entity:
+    - fileID: 11400000
+      guid: 56afb4285f2851f8ab85be9400af413c
+      type: 2
+    - fileID: 11400000
+      guid: 896f112c95bb5611b5d1016483ef2eda
+      type: 2
+    - fileID: 11400000
+      guid: ac9d133bb40f5a40b33bc5d15184b459
+      type: 2
+  - entity:
+    - fileID: 11400000
+      guid: 9bbf37dc0dca5a7c9bb0b9376d4c1f7e
+      type: 2
+    - fileID: 11400000
+      guid: ff2959a33dfe5c10b386336391a42503
+      type: 2
+    - fileID: 11400000
+      guid: b31151d0ec9759b88b3fd07c117332df
+      type: 2
+  - entity:
+    - fileID: 11400000
+      guid: 9d7984715b3358ba80a1694deb8baab3
+      type: 2
+    - fileID: 11400000
+      guid: 0283d0d3b1fe5099be2010e42855346f
+      type: 2
+    - fileID: 11400000
+      guid: f1491ac3d5e15193ab285b582486b91c
+      type: 2
+  additionalWeapons:
+  - fileID: 11400000
+    guid: 2d8294bf26e35cebbe95999224caf17b
+    type: 2
+  - fileID: 11400000
+    guid: ef652d71a59c534599cc776519b7807a
+    type: 2
+  - fileID: 11400000
+    guid: 9d4228e5b0385dbabf7bf5b9d3fe62f8
+    type: 2
+  - fileID: 11400000
+    guid: ffc0383554725d1da1d883917d2e958a
+    type: 2
+  - fileID: 11400000
+    guid: 544f2a8524d35877916f4119ea88eec7
+    type: 2
+  - fileID: 11400000
+    guid: 63c326fb629354598aa66bd049ea709f
+    type: 2
+  - fileID: 11400000
+    guid: 9a52508b862c5cee9aa264fa6482b98f
+    type: 2
+  - fileID: 11400000
+    guid: 0a8869427e1d54ceb944420e1afdf703
+    type: 2
+  - fileID: 11400000
+    guid: b706c1fecbc95530abf6dfaf35981a4c
+    type: 2
+  - fileID: 11400000
+    guid: e1e75e102c1159b797800063cc1f1d24
+    type: 2
+  - fileID: 11400000
+    guid: fa7604995af7590a9648a7a391de80b4
+    type: 2
+  - fileID: 11400000
+    guid: 6b35dc6ebdd353e280837b79a498c729
+    type: 2
+  - fileID: 11400000
+    guid: bbc810c174865fa88042cb6aa39727a0
+    type: 2
+  - fileID: 11400000
+    guid: e080caf0a55d510ca8ff4892c1a96dba
+    type: 2
+  - fileID: 11400000
+    guid: 41e047fbe1605e13804ba56cc00bb756
+    type: 2
+  - fileID: 11400000
+    guid: 1973b5cb6b78506384e15c21f8a05b2b
+    type: 2
+  - fileID: 11400000
+    guid: 012fc796686550d28378f64e91f75b9d
+    type: 2
+  - fileID: 11400000
+    guid: 54c69effe6d15200a23efd3587299198
+    type: 2
+  - fileID: 11400000
+    guid: 151c480f0c5a5984bf2619a443780687
+    type: 2
+  - fileID: 11400000
+    guid: 0ec9990d74d65bbfac0e13ecfcfdcaab
+    type: 2

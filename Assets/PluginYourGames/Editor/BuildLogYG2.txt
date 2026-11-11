@@ -1,0 +1,3 @@
+﻿Build path: D:/!NEW_DESKTOP/build27
+Build number: 10
+PluginYG version: 2.0092

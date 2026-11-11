@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Name: Wave07
+  m_EditorClassIdentifier: ''
+  m_Script: {fileID: 11500000, guid: 7ab55427227c54169119e39cbcdc85f1, type: 3}
+  groups:
+  - unit: {fileID: 11400000, guid: a59b65b80a715537bcb398e44436a5ff, type: 2}
+    count: 10
+    delay: 1
+    interval: 1
+    boss: 0
+  - unit: {fileID: 11400000, guid: 73b9f9039c0c5347a8cb3e17991da18a, type: 2}
+    count: 4
+    delay: 2
+    interval: 1
+    boss: 0
+  - unit: {fileID: 11400000, guid: 6f93e2ef632053e2898d23bc56b5788e, type: 2}
+    count: 2
+    delay: 2
+    interval: 1
+    boss: 0
+  healthScale: 1
+  damageScale: 1
+  enemyBunker: 0
+  bunkerHealth: 1
+  victoryCoins: 1
