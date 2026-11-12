@@ -202,7 +202,10 @@ jobs:
           app="$(find "$workdir/Payload" -maxdepth 1 -name '*.app' -type d | head -n 1)"
           test -n "$app"
           codesign --verify --deep --strict --verbose=2 "$app"
-          application_identifier="$(codesign -d --entitlements :- "$app" 2>/dev/null | /usr/libexec/PlistBuddy -c 'Print :application-identifier' /dev/stdin)"
+          bundle_identifier="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$app/Info.plist")"
+          test "$bundle_identifier" = "$IOS_BUNDLE_ID"
+          security cms -D -i "$app/embedded.mobileprovision" > "$workdir/profile.plist"
+          application_identifier="$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' "$workdir/profile.plist")"
           test "${application_identifier#*.}" = "$IOS_BUNDLE_ID"
           rm -rf "$workdir"
 
