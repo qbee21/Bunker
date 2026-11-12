@@ -50,9 +50,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: Library
-          key: Library-iOS-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          key: Library-iOS-offline-v2-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-iOS-
+            Library-iOS-offline-v2-
 
       - name: Build unsigned iOS Xcode project
         uses: game-ci/unity-builder@v6

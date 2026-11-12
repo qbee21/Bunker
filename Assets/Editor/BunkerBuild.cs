@@ -37,6 +37,7 @@ public class BunkerBuild
         PlayerSettings.statusBarHidden = true;
         PlayerSettings.iOS.appleDeveloperTeamID = "CFG7FY3R8S";
         PlayerSettings.iOS.appleEnableAutomaticSigning = false;
+        PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.iOS, string.Empty);
         Texture2D iOSIcon = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Branding/BunkerEvolutionAppIcon.jpg");
         if (iOSIcon != null) PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS, new[] { iOSIcon });
         else Debug.LogWarning("Bunker iOS icon source is missing: Assets/Branding/BunkerEvolutionAppIcon.jpg");
