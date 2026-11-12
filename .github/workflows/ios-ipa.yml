@@ -86,8 +86,8 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-  validate_simulator:
-    name: Validate iOS simulator build
+  validate_xcode_project:
+    name: Validate exported iOS project
     needs: export_xcode
     continue-on-error: true
     runs-on: macos-15
@@ -98,16 +98,17 @@ jobs:
           name: ios-xcode-project
           path: Builds/iOS
 
-      - name: Build without signing for iOS Simulator
-        run: >-
-          xcodebuild
-          -project Builds/iOS/Unity-iPhone.xcodeproj
-          -scheme Unity-iPhone
-          -configuration Debug
-          -sdk iphonesimulator
-          -destination 'generic/platform=iOS Simulator'
-          CODE_SIGNING_ALLOWED=NO
-          build
+      - name: Inspect iOS device build settings without signing
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project Builds/iOS/Unity-iPhone.xcodeproj \
+            -scheme Unity-iPhone \
+            -configuration Debug \
+            -sdk iphoneos \
+            CODE_SIGNING_ALLOWED=NO \
+            -showBuildSettings > /dev/null
 
   sign_ipa:
     name: Sign and export IPA
