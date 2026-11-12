@@ -45,7 +45,7 @@ public class BunkerBuild
         PlayerSettings.WebGL.dataCaching = true;
         PlayerSettings.stripEngineCode = true;
         PlayerSettings.WebGL.template = "PROJECT:YandexGames";
-        Object settings = Unsupported.GetSerializedAssetInterfaceSingleton("PlayerSettings");
+        UnityEngine.Object settings = Unsupported.GetSerializedAssetInterfaceSingleton("PlayerSettings");
         if (settings != null)
         {
             SerializedObject player = new SerializedObject(settings);
