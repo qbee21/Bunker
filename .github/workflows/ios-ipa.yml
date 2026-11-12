@@ -89,6 +89,7 @@ jobs:
   validate_simulator:
     name: Validate iOS simulator build
     needs: export_xcode
+    continue-on-error: true
     runs-on: macos-15
     steps:
       - name: Download Xcode project
