@@ -25,4 +25,9 @@ Prepare Base64 values locally without printing their contents, then paste the re
 
 The workflow intentionally does not upload to TestFlight or App Store Connect. A default run retains the unsigned Xcode project; a signed run additionally retains an `.xcarchive` and signed `.ipa`.
 
+The signing and validation jobs run on the `macos-26` GitHub-hosted image and verify
+Xcode 26 or newer. This is required by App Store Connect for iOS submissions using
+the iOS 26 SDK. An IPA previously built with Xcode 15 / iOS 18.5 SDK cannot be
+repaired after the fact; start a new workflow run to produce a compliant IPA.
+
 The workflow reads the provisioning-profile display name from the installed profile; do not create a separate secret for it.
