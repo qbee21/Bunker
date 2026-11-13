@@ -31,3 +31,7 @@ the iOS 26 SDK. An IPA previously built with Xcode 15 / iOS 18.5 SDK cannot be
 repaired after the fact; start a new workflow run to produce a compliant IPA.
 
 The workflow reads the provisioning-profile display name from the installed profile; do not create a separate secret for it.
+
+The Unity export step is allowed to report the known game-ci cleanup exit code
+after a successful export. The following file checks are mandatory, so a missing
+or incomplete Xcode project still fails the workflow before signing starts.
