@@ -7,14 +7,14 @@ public class HideObject : MonoBehaviour
 	public bool isBattle;
 	
 	public void Hide(bool isInPlan){
-		
+		if (obj == null) return;
 		obj.SetActive(false);
 		if(isInPlan) Invoke("Show", timerActivate);
 		
 	}
    
 	public void Show(){
-		
+		if (obj == null) return;
 		if(!isBattle)
 		{
 			obj.SetActive(true);

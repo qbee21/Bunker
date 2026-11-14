@@ -18,7 +18,7 @@ The manual `iOS IPA` workflow expects these GitHub Actions repository secrets:
 | `APPLE_TEAM_ID` | Apple Developer Team ID. |
 | `IOS_DISTRIBUTION_P12_BASE64` | Base64 of the Apple Distribution `.p12`. |
 | `IOS_DISTRIBUTION_P12_PASSWORD` | Password for that `.p12`. |
-| `IOS_APPSTORE_PROFILE_BASE64` | Base64 of the App Store provisioning profile for `com.starodymov.bunker`. |
+| `IOS_APPSTORE_PROFILE_BASE64` | Base64 of `DistrBunkerNoads.mobileprovision`, the App Store provisioning profile for `com.bunkerNoads.starodymov`. |
 | `KEYCHAIN_PASSWORD` | Newly generated disposable password used only for the temporary CI keychain. |
 
 Prepare Base64 values locally without printing their contents, then paste the result directly into the GitHub secret UI. Use a short-lived local file or clipboard and remove it afterward. Do not add the generated strings to workflow logs.
@@ -31,6 +31,10 @@ the iOS 26 SDK. An IPA previously built with Xcode 15 / iOS 18.5 SDK cannot be
 repaired after the fact; start a new workflow run to produce a compliant IPA.
 
 The workflow reads the provisioning-profile display name from the installed profile; do not create a separate secret for it.
+
+For local Unity iOS exports, install `DevBunkerNoads.mobileprovision`. It is selected
+in Project Settings by UUID. The distribution profile remains a GitHub Actions secret
+and must not be committed.
 
 The Unity export step is allowed to report the known game-ci cleanup exit code
 after a successful export. The following file checks are mandatory, so a missing
