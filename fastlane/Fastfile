@@ -6,6 +6,7 @@ platform :ios do
     setup_ci
 
     project_path = ENV.fetch("IOS_XCODE_PROJECT")
+    workspace_path = ENV.fetch("IOS_XCODE_WORKSPACE")
     export_path = ENV.fetch("IOS_EXPORT_PATH")
     team_id = ENV.fetch("APPLE_TEAM_ID")
     bundle_id = ENV.fetch("IOS_BUNDLE_ID", "com.starodymov.bunker")
@@ -21,7 +22,7 @@ platform :ios do
     )
 
     build_app(
-      project: project_path,
+      workspace: workspace_path,
       scheme: "Unity-iPhone",
       configuration: "Release",
       clean: true,

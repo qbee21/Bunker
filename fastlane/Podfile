@@ -1,0 +1,15 @@
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '15.0'
+
+project 'Unity-iPhone.xcodeproj'
+
+# The Yandex Unity bridge sources are compiled into UnityFramework, so the
+# native SDK must be linked to that target rather than only to the app target.
+target 'UnityFramework' do
+  pod 'YandexMobileAds', '8.6.0'
+end
+
+target 'Unity-iPhone' do
+  inherit! :search_paths
+end

@@ -25,6 +25,7 @@ env:
   IOS_BUNDLE_ID: com.starodymov.bunker
   IOS_EXPORT_PATH: ${{ github.workspace }}/artifacts/ipa
   IOS_XCODE_PROJECT: ${{ github.workspace }}/Builds/iOS/Unity-iPhone.xcodeproj
+  IOS_XCODE_WORKSPACE: ${{ github.workspace }}/Builds/iOS/Unity-iPhone.xcworkspace
 
 jobs:
   export_xcode:
@@ -116,12 +117,31 @@ jobs:
           major="$(xcodebuild -version | awk '/^Xcode / {split($2, v, "."); print v[1]}')"
           test "$major" -ge 26
 
+      - name: Resolve native iOS dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > Builds/iOS/Podfile <<'EOF'
+          source 'https://cdn.cocoapods.org/'
+          platform :ios, '15.0'
+          project 'Unity-iPhone.xcodeproj'
+          target 'UnityFramework' do
+            pod 'YandexMobileAds', '8.6.0'
+          end
+          target 'Unity-iPhone' do
+            inherit! :search_paths
+          end
+          EOF
+          cd Builds/iOS
+          pod install --repo-update
+          test -f Unity-iPhone.xcworkspace/contents.xcworkspacedata
+
       - name: Inspect iOS device build settings without signing
         shell: bash
         run: |
           set -euo pipefail
           xcodebuild \
-            -project Builds/iOS/Unity-iPhone.xcodeproj \
+            -workspace Builds/iOS/Unity-iPhone.xcworkspace \
             -scheme Unity-iPhone \
             -configuration Debug \
             -sdk iphoneos \
@@ -201,6 +221,15 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Resolve native iOS dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp fastlane/Podfile Builds/iOS/Podfile
+          cd Builds/iOS
+          pod install --repo-update
+          test -f Unity-iPhone.xcworkspace/contents.xcworkspacedata
+
       - name: Set iOS build number
         shell: bash
         run: |
@@ -217,6 +246,15 @@ jobs:
         env:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         run: bundle exec fastlane ios build_ipa
+
+      - name: Upload Xcode archive failure log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-xcode-archive-failure-log
+          path: ~/Library/Logs/gym/*.log
+          if-no-files-found: warn
+          retention-days: 7
 
       - name: Verify IPA signature and embedded profile
         shell: bash
