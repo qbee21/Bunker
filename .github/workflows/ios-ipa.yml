@@ -126,7 +126,7 @@ jobs:
           platform :ios, '15.0'
           project 'Unity-iPhone.xcodeproj'
           target 'UnityFramework' do
-            pod 'YandexMobileAds', '8.6.0'
+            pod 'YandexMobileAds', '8.7.0'
           end
           target 'Unity-iPhone' do
             inherit! :search_paths

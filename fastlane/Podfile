@@ -7,7 +7,9 @@ project 'Unity-iPhone.xcodeproj'
 # The Yandex Unity bridge sources are compiled into UnityFramework, so the
 # native SDK must be linked to that target rather than only to the app target.
 target 'UnityFramework' do
-  pod 'YandexMobileAds', '8.6.0'
+  # The Unity bridge 8.6 is API-compatible with native SDK 8.7.  Version 8.7
+  # is built with Xcode 26 support, unlike the 8.6 binary.
+  pod 'YandexMobileAds', '8.7.0'
 end
 
 target 'Unity-iPhone' do
