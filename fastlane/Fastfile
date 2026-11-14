@@ -8,7 +8,7 @@ platform :ios do
     project_path = ENV.fetch("IOS_XCODE_PROJECT")
     export_path = ENV.fetch("IOS_EXPORT_PATH")
     team_id = ENV.fetch("APPLE_TEAM_ID")
-    bundle_id = ENV.fetch("IOS_BUNDLE_ID", "com.bunkerNoads.starodymov")
+    bundle_id = ENV.fetch("IOS_BUNDLE_ID", "com.starodymov.bunker")
     profile_name = ENV.fetch("IOS_PROFILE_NAME")
 
     update_code_signing_settings(

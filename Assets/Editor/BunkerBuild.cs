@@ -31,15 +31,15 @@ public class BunkerBuild
         PlayerSettings.allowedAutorotateToPortraitUpsideDown = false;
         PlayerSettings.allowedAutorotateToLandscapeLeft = true;
         PlayerSettings.allowedAutorotateToLandscapeRight = true;
-        PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS, "com.bunkerNoads.starodymov");
+        PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS, "com.starodymov.bunker");
         PlayerSettings.iOS.targetOSVersionString = "15.0";
         PlayerSettings.iOS.applicationDisplayName = "Bunker Evolution";
         PlayerSettings.iOS.requiresFullScreen = true;
         PlayerSettings.statusBarHidden = true;
         PlayerSettings.iOS.appleDeveloperTeamID = "CFG7FY3R8S";
         PlayerSettings.iOS.appleEnableAutomaticSigning = false;
-        // DevBunkerNoads.mobileprovision stays local and is deliberately ignored by Git.
-        PlayerSettings.iOS.iOSManualProvisioningProfileID = "5ad1faa2-f208-4e4a-939d-d5a7391bbd72";
+        // BunkerDev.mobileprovision stays local and is deliberately ignored by Git.
+        PlayerSettings.iOS.iOSManualProvisioningProfileID = "b9219d75-35d1-4d2b-bc8c-283599803a29";
         PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup.iOS, string.Empty);
         Texture2D iOSIcon = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Branding/BunkerEvolutionAppIcon.jpg");
         if (iOSIcon != null) PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.iOS, new[] { iOSIcon });

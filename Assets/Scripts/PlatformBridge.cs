@@ -1,8 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Native/offline platform behaviour. The App Store edition deliberately has no ads,
-/// no external authentication, no remote leaderboard and no cloud-save dependency.
+/// Native iOS platform behaviour. Native full-screen ads are delegated to AdsService.
 /// </summary>
 public class PlatformBridge : MonoBehaviour
 {
@@ -11,20 +10,21 @@ public class PlatformBridge : MonoBehaviour
     bool focused = true;
 
     public bool DataReady { get { return true; } }
-    public bool IsAdBusy { get { return false; } }
+    public bool IsAdBusy { get { return AdsService.Instance.IsBusy; } }
+    public bool IsRewardedReady { get { return AdsService.Instance.IsRewardedReady; } }
+    public int RewardCoins { get { return AdsService.Instance.RewardCoins; } }
 
-    public void CompleteInitialization() { SyncPause(); }
+    public void CompleteInitialization() { SyncPause(); AdsService.Instance.Initialize(); }
     public void ApplyEnvironmentLanguage() { }
     public bool RestoreProgress() { return false; }
 
     public bool CanPlay()
     {
-        return GameCore.instance != null && GameCore.instance.initialized && !GameCore.instance.paused;
+        return GameCore.instance != null && GameCore.instance.initialized && !GameCore.instance.paused && !IsAdBusy;
     }
 
-    // Compatibility methods for existing serialized UnityEvents. Monetized SDK calls were removed.
-    public void Reward(System.Action callback) { }
-    public void Interstitial(System.Action next) { if (next != null) next(); }
+    public void Reward(System.Action callback) { AdsService.Instance.ShowRewarded(callback, null); }
+    public void Interstitial(System.Action next) { AdsService.Instance.ShowInterstitial(next); }
     public void Save(string json) { }
     public void Score(int score) { }
     public void Gameplay(bool playing) { }

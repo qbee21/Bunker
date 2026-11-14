@@ -167,7 +167,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.starodymov.towerdefense
-    iPhone: com.bunkerNoads.starodymov
+    iPhone: com.starodymov.bunker
     Standalone: com.DefaultCompany.2D-URP
   buildNumber:
     Standalone: 0
@@ -244,7 +244,7 @@ PlayerSettings:
   iOSRenderExtraFrameOnPause: 0
   iosCopyPluginsCodeInsteadOfSymlink: 0
   appleDeveloperTeamID: CFG7FY3R8S
-  iOSManualSigningProvisioningProfileID: 5ad1faa2-f208-4e4a-939d-d5a7391bbd72
+  iOSManualSigningProvisioningProfileID: b9219d75-35d1-4d2b-bc8c-283599803a29
   tvOSManualSigningProvisioningProfileID: 
   VisionOSManualSigningProvisioningProfileID: 
   iOSManualSigningProvisioningProfileType: 0

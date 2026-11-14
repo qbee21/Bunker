@@ -182,7 +182,7 @@ public class GameCore : MonoBehaviour
         RefreshBattle();
     }
 
-    // Kept as a serialized UnityEvent target for old scenes. iOS has no rewarded ads.
+    // Kept as a serialized UnityEvent target for old scenes; food is not a rewarded-ad reward.
     public void RewardFood() { }
 
     public void UnitDied(CombatEntity unit)
@@ -236,12 +236,18 @@ public class GameCore : MonoBehaviour
         economy.Save();
         platform.Gameplay(false);
         battlePanel.SetActive(false);
-        resultPanel.SetActive(true);
         lastVictory = victory;
         lastFinishedWave = finishedWave;
         lastBonus = bonus;
-        RefreshResult();
         ClearField();
+        platform.Interstitial(ShowResult);
+    }
+
+    void ShowResult()
+    {
+        if (!finishing || resultPanel == null) return;
+        resultPanel.SetActive(true);
+        RefreshResult();
     }
 
     void RefreshResult()
@@ -421,7 +427,29 @@ public class GameCore : MonoBehaviour
         return true;
     }
 
-    // Compatibility targets for existing UnityEvents. Monetized rewards are removed.
+    public bool CanShowRewardedCoins()
+    {
+        return initialized && !inBattle && platform != null && !platform.IsAdBusy && platform.IsRewardedReady
+            && (menuPanel.activeSelf || prepPanel.activeSelf);
+    }
+
+    public void ShowRewardedCoins()
+    {
+        if (!CanShowRewardedCoins()) return;
+        sound.PlayClick();
+        platform.Reward(GrantRewardedCoins);
+    }
+
+    // AdsService invokes this only from Yandex RewardedAd.OnRewarded.
+    void GrantRewardedCoins()
+    {
+        economy.AddCoin(platform.RewardCoins);
+        economy.Save();
+        economy.ReloadData();
+        sound.PlayCoin();
+    }
+
+    // Kept only so obsolete serialized UnityEvents remain harmless.
     public bool CanRewardMenuCoins() { return false; }
     public void RewardMenuCoins() { }
     public void ReloadCloudProgress()

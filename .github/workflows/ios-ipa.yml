@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  IOS_BUNDLE_ID: com.bunkerNoads.starodymov
+  IOS_BUNDLE_ID: com.starodymov.bunker
   IOS_EXPORT_PATH: ${{ github.workspace }}/artifacts/ipa
   IOS_XCODE_PROJECT: ${{ github.workspace }}/Builds/iOS/Unity-iPhone.xcodeproj
 
