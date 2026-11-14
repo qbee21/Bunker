@@ -6,7 +6,7 @@ on:
       build_number:
         description: "Positive iOS build number"
         required: true
-        default: "1"
+        default: "2"
         type: string
       sign_ipa:
         description: "Sign and export an IPA; false only exports the Xcode project (requires Apple secrets)"
@@ -72,7 +72,7 @@ jobs:
           buildsPath: Builds
           buildName: iOS
           versioning: Custom
-          version: 1.0.0
+          version: 1.0.1
 
       - name: Verify Xcode export
         if: always()
