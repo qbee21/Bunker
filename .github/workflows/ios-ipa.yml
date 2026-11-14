@@ -131,6 +131,19 @@ jobs:
           target 'Unity-iPhone' do
             inherit! :search_paths
           end
+          post_install do |installer|
+            installer.aggregate_targets.each do |aggregate_target|
+              project = aggregate_target.user_project
+              project.native_targets.each do |target|
+                next unless ['Unity-iPhone', 'UnityFramework'].include?(target.name)
+                target.build_configurations.each do |configuration|
+                  configuration.build_settings['LIBRARY_SEARCH_PATHS'] = '$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)'
+                  configuration.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = 'YES'
+                end
+              end
+              project.save
+            end
+          end
           EOF
           cd Builds/iOS
           pod install --repo-update
